@@ -1,0 +1,175 @@
+开始办理之前，如果有EMSorderNUmber字段，显示核验材料按钮，点击弹出需要核验材料内容，最后点击确定
+如果有EMSorderNUmberTwo字段,给警员预览邮寄信息（丁扬），确认后办结
+
+
+表格只显示受理部门及其受理部门的角色，点击编辑获取该整个  流程
+
+setWorkFlow 将整个流程进行保存（流程所有数据）
+
+对表格进行添加和删除，还是workFlow格式
+
+record是 指 dataSource的某一条记录，包含所有字段。
+
+编辑可以不根据表格的record进行传值，
+
+怎么获取受理流程的部门、角色
+http://221.180.204.15:8080/rule/unifiedSet
+http://221.180.204.15/swagger-ui/index.html#/ 电子监察 
+电子监察线上地址：http://221.180.204.15/index.html https://gitee.com/linzantian/dva/blob/master/src/services/index.js  axios使用
+鞍山账号 300000  372475 100000 沈阳 100002 沈阳和平区级账号
+http://221.180.204.18:8080/login 辽宁公安
+http://221.180.204.18:8080/index.html# 线上
+http://www.dt-reta.tech:10080/docs/react/introduce-cn dtd
+https://alibaba.github.io/BizCharts/
+http://221.180.204.18/index http://221.180.204.18/testLogin  前台系统  
+用户名 吴祖弘 密码 1qaz2wsx 
+18704054695  zch930917  c1234 cai151610
+/****************接口文档*************************/    20180613195700000020
+https://shimo.im/sheet/VXPeDBacy7Qj0dnm/  石墨
+https://shimo.im/sheet/6wUKNZKRJVwXMXQS/ 石墨
+http://221.180.204.18:8080/swagger-ui/index.html#/Cases/getDetail
+http://221.180.204.18:8080/swagger-ui/swagger.yaml
+http://nec.netease.com/standard/css-error.html css规范
+https://blog.csdn.net/qq_30092189/article/details/76468302 git的下载、安装配置和使用
+https://blog.csdn.net/zuggs_/article/details/80747438 富文本编辑器
+https://www.cnblogs.com/yuqingfamily/p/5813650.html  优秀博客（晴晴加油）
+https://www.jb51.net/article/97901.htm  js正则表达式学习和总结
+https://blog.csdn.net/qq_40963664/article/details/80697708 dva loading的全局配置
+https://www.jianshu.com/p/30aa0465f2c8  在dva的effects中实现callback回调
+https://blog.csdn.net/m_review/article/details/75367104 dva
+https://www.cnblogs.com/waterFowl/p/8012096.html React中路由传参及接收参数的方式
+https://www.cnblogs.com/st-leslie/p/5617130.html localStorage
+https://www.cnblogs.com/smartXiang/p/6051086.html VueJs2.0建议学习路线
+/*****************************************/
+42.236.82.243/qianduan/dy/lnAdmin-    svn
+https://pro.ant.design/docs/router-and-nav-cn
+https://segmentfault.com/a/1190000010174260 react-router4
+https://www.cnblogs.com/zhilingege/p/7214217.html // setState()参数
+http://www.codes51.com/itwd/3647123.html
+https://cnodejs.org/topic/5895a8541555834405dde673
+
+注意：const { value, searchText} = this.state;结构的是当前state值，再setState({}),结构的值不会跟着改变。
+在setup发起多次请求时、第二次请求的数据拿不到。setup和componentWillMount的关系
+怎么添加、移除dtd组件的className
+重新进入页面，数据重复加载的问题（机构管理）didMOunt换成willMount
+动态添加的表单，表单名也是动态添加的，怎么获取它的值呢 ？默认存在的表单也要设置动态删除
+循环的formItem中的有默认值的Select动态切换问题》
+treeSelect 和 tree不太一样，treeSelect没有onCheck事件
+
+1、一个组件中有两个表单组件，怎么区分它们两个？ 给一个表单设置值，另一个表单也能获取到。
+
+2、为什么请求的数据数目不一样？ 分页分开请求的，设置数据个数：response.count，显示更多页（可供点击）
+
+3、construtor(props) 执行几次？ props是改变的吗？
+
+4、备案公安机关、所属区县不显示。
+
+getFieldDecorator名称写错了 所属区县？
+
+5、查询之后清空默认初始数据，分页还是原来的分页 ？ -》设置为受控分页，onShowSizeChange this.setState({current: current})
+
+否则current不会改变
+
+6、modal框多久关闭？
+
+7、角色管理，设置管理区域默认选中的数据，初始值是【】，加载不进来
+
+点击设置区域，加载新请求的数据
+
+8、arrCategory存放一级、二级数据 arrTag存放三级数据
+
+9、带参函数的传递
+
+参数是一级标签（有下级的）operation=‘’
+
+ui: 参数是一级标签（无下级的）或二级标签 operation=‘添加标签’
+
+children是符合 caseCategory.id == id的 arrCategory/arrTag里的数据
+
+ui: 参数是最后一级标签 operation=‘编辑、删除’
+
+children是符合 caseCategory.id == id的 arrTag里的数据
+
+9、怎么判断它是二级还是三级数据呢？第二个数组里存放的是三级数据
+
+在函数中使用setFieldsValue报错：
+You cannot set field before registering it.
+只能用在render之后的生命周期函数里，因为fields是在render函数里注册的
+
+
+// render函数中代码不执行的问题：
+
+ <Form>
+                      {
+                        handleType != 'deal' && sourceData.formDesign.formDesignPageList.map((pageItem)=> {
+                          pageItem.formDesignFieldList.map((fieldItem)=> {
+                            if (fieldItem.type == "fileupload" || fieldItem.type == "imageupload") {
+                              console.log(fieldItem.type);
+                              return createFormField(fieldItem, getSubmitData(sourceData.caseData.caseDataContents))
+                            }
+                          })
+                        })
+                      }
+                    </Form>
+修改之后：原因： 在循环内部的return在外面接收不到
+
+<Form>
+                      {
+                        handleType != 'deal' && sourceData.formDesign.formDesignPageList.map((pageItem)=> {
+                          return pageItem.formDesignFieldList.map((fieldItem)=> {
+                            if (fieldItem.type == "fileupload" || fieldItem.type == "imageupload") {
+                              return createFormField(fieldItem, getSubmitData(sourceData.caseData.caseDataContents))
+                            }
+                          })
+                        })
+                      }
+                    </Form>
+
+Uncaught TypeError: Cannot read property 'isSelectOptGroup' of undefined Select组件标签没关闭
+
+页面路由跳转，页面会重新渲染并经历一个生命周期，带参(state传参)路由跳转后的页面强制重新刷新后，this.props.location.state获取不到了
+
+10、预约列表不显示图片、附件，是因为在render函数中没有return createFormField函数
+
+11、在IE8以上的IE版本才支持localStorage这个属性
+目前所有的浏览器中都会把localStorage的值类型限定为string类型，这个在对我们日常比较常见的JSON对象类型需要一些转换
+一般我们会将JSON存入localStorage中，但是在localStorage会自动将localStorage转换成为字符串形式
+
+这个时候我们可以使用JSON.stringify()这个方法，来将JSON转换成为JSON字符串
+
+11、树形组件 只要有children属性就会按照有子级进行显示（即使isLeaf为true）,children非空（即使isLeaf为false也没用），
+
+12、@connect 如果只返回model的namespace,this.props 和nextProps就返回namespace，获得具体数据就要先获取namespace
+
+10、table scroll设置过小，会使行高变高。
+30/31.8、10.5  9%（）
+
+ {/*<Timeline
+              columns={this.columns}
+              data={this.audit && this.audit}
+              rowKey={(record) => record.id}
+              />*/}
+ function convertDateFromString(dateString) {
+      if (dateString) {
+        //var arr1 = dateString.split(" ");
+        //var sdate = arr1[0].split('-');
+        //var date = new Date(sdate[0], sdate[1]-1, sdate[2]);
+        var arr = dateString.split(":");
+        var date = new Date(arr[0], arr[1], arr[2]);
+        return date;
+      }
+    }
+
+
+
+for...in 语句以任意顺序遍历一个对象的可枚举属性。对于每个不同的属性，语句都会被执行。每次迭代时，分配的是属性名　　
+
+补充: 因为迭代的顺序是依赖于执行环境的，所以数组遍历不一定按次序访问元素。 因此当迭代那些访问次序重要的 arrays 时用整数索引去进行 for 循环 (或者使用 Array.prototype.forEach() 或 for...of 循环) 。
+
+js中遍历获取对象属性和方法主要有Object.keys()、Object.getOwnPropertyNames()、for...in...三种方式 // https://www.cnblogs.com/nerrol/p/8137065.html
+
+1、for in会输出自身以及原型链上可枚举的属性。
+
+2、Object.keys用来获取对象自身可枚举的属性键。
+
+3、Object.getOwnPropertyNames用来获取对象自身的全部属性名
